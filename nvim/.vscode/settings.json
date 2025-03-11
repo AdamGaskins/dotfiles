@@ -1,0 +1,4 @@
+{
+    "Lua.workspace.library": ["/opt/homebrew/Cellar/neovim/0.10.4/share/nvim/runtime"],
+    "Lua.diagnostics.globals": ["vim"]
+}

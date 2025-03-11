@@ -13,6 +13,14 @@ return {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
+        completion = {
+            keyword = { range = 'full' },
+            trigger = {
+                show_on_trigger_character = true,
+                show_on_blocked_trigger_characters = { ' ', '\n', '\t', '{' }
+            }
+        },
+
         -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept, C-n/C-p for up/down)
         -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys for up/down)
         -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
@@ -44,7 +52,8 @@ return {
         -- Default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
-            default = {'lsp', 'path', 'snippets', 'buffer'}
+            default = {'lsp', 'path', 'snippets', 'buffer'},
+            --min_keyword_length = 2
         },
 
         -- Blink.cmp uses a Rust fuzzy matcher by default for typo resistance and significantly better performance

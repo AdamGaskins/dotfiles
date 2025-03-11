@@ -5,9 +5,18 @@ return {
         require("conform").setup({
             format_on_save = {},
             formatters_by_ft = {
-              javascript = { "prettier", "prettierd", stop_after_first = true },
-              vue = { "prettier" },
-            },
+                javascript = {
+                    "prettier",
+                    "prettierd",
+                    stop_after_first = true
+                },
+                typescript = {
+                    "prettier",
+                    "prettierd",
+                    stop_after_first = true
+                },
+                vue = {"prettier"}
+            }
         })
     end
 }
