@@ -94,6 +94,9 @@ return {{
 
         require('lspconfig').clangd.setup {}
 
+        require'lspconfig'.phpactor.setup{}
+
+
         -- local cmp = require('cmp')
         -- cmp.setup({
         --     sources = {{
