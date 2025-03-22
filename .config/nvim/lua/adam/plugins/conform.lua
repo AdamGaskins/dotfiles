@@ -5,6 +5,8 @@ return {
         require("conform").setup({
             format_on_save = {},
             formatters_by_ft = {
+                lua = { "stylua" },
+                rust = { "rustfmt" },
                 javascript = {
                     "prettier",
                     "prettierd",
@@ -15,7 +17,16 @@ return {
                     "prettierd",
                     stop_after_first = true
                 },
-                vue = {"prettier"}
+                vue = {"prettier"},
+                c = {
+                    "clang-format"
+                },
+                cpp = { "clang-format" }
+            },
+            formatters = {
+                ["clang-format"] = {
+                    append_args = { "--style=WebKit" }
+                },
             }
         })
     end

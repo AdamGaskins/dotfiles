@@ -16,5 +16,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = "adam.plugins",
-  checker = { enabled = true },
+  checker = { enabled = true, notify = false },
 })

@@ -1,0 +1,13 @@
+# https://ghostty.org/docs/config
+
+cursor-style = bar
+background-opacity = 0.85
+background-blur = 20
+window-height = 30
+window-width = 100
+#font-family = Monaspace Argon Frozen
+#font-family = Iosevka Term Extended
+font-family = Cascadia Code
+font-size = 15
+theme = Monokai Remastered
+cursor-color = #ffffff
