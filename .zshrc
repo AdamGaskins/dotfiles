@@ -144,3 +144,4 @@ eval "$(pyenv init - zsh)"
 export HERD_PHP_84_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/84/"
 
 eval "$(starship init zsh)"
+
