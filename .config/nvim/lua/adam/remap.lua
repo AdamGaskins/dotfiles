@@ -28,9 +28,7 @@ vim.api.nvim_set_keymap("n", "<leader>do", ":DapStepOver<CR>", { noremap = true 
 vim.api.nvim_set_keymap("n", "<leader>dr", ":lua require('dapui').open({reset = true})<CR>", { noremap = true })
 
 -- quick switcher
-vim.keymap.set("n", "<leader>s", function()
-	require("nvim-quick-switcher").find(".+c|.+cpp|.+h|.+hpp", { regex = true, prefix = "full" })
-end)
+vim.keymap.set("n", "<leader>s", ":ClangdSwitchSourceHeader<CR>")
 
 -- close buffer without messing up window
 vim.keymap.set("n", "<leader>bd", ":lua require('mini.bufremove').delete()<CR>", { noremap = true })
