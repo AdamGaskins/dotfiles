@@ -14,7 +14,7 @@ return {
 				},
 			})
 
-			MyColorscheme("tokyonight")
+			MyColorscheme("tokyonight-moon")
 		end,
 		overrides = function(colors)
 			local theme = colors.theme
