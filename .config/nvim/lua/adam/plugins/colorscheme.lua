@@ -1,5 +1,5 @@
 function MyColorscheme(color)
-	color = color or "kanagawa"
+	color = color or "tokyonight"
 	vim.cmd.colorscheme(color)
 end
 
@@ -8,13 +8,13 @@ return {
 		"rebelot/kanagawa.nvim",
 		config = function()
 			require("kanagawa").setup({
-				transparent = true,
+				transparent = false,
 				float = {
 					transparent = false,
 				},
 			})
 
-			MyColorscheme("kanagawa")
+			MyColorscheme("tokyonight")
 		end,
 		overrides = function(colors)
 			local theme = colors.theme
@@ -35,5 +35,11 @@ return {
 	},
 	{
 		"cmoscofian/nibble-vim",
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
 	},
 }

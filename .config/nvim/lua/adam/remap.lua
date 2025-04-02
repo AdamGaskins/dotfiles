@@ -1,3 +1,6 @@
+-- disable mouse
+vim.opt.mouse = ""
+
 -- reload source
 vim.keymap.set("n", "<leader>rc", ":source $MYVIMRC<CR>")
 

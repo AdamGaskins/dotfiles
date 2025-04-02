@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 phpstorm () { open -na "PhpStorm.app" --args "$@" ;}
 art () { php artisan $* ; }
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 # Herd injected NVM configuration
 export NVM_DIR="/Users/adam/Library/Application Support/Herd/config/nvm"

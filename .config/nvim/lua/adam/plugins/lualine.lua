@@ -6,7 +6,7 @@ return {
 
 		require("lualine").setup({
 			options = {
-				theme = "auto",
+				theme = "tokyonight",
 				section_separators = { left = "", right = "" },
 			},
 			sections = {

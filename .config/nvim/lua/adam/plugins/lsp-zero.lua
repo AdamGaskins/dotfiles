@@ -97,8 +97,8 @@ return {
 
 			require("lspconfig").clangd.setup({})
 
-			require("lspconfig").phpactor.setup({})
-			--require("lspconfig").intelephense.setup({})
+			--require("lspconfig").phpactor.setup({})
+			require("lspconfig").intelephense.setup({})
 
 			require("lspconfig").rust_analyzer.setup({})
 

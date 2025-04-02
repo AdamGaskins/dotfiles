@@ -15,6 +15,8 @@ brew install zsh # mac
 chsh -s $(which zsh)
 ```
 
+Install Nerd Font
+
 Starship Prompt
 ```
 curl -sS https://starship.rs/install.sh | sh
