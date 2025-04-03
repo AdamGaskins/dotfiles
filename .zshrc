@@ -146,3 +146,4 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/co
 
 eval "$(starship init zsh)"
 
+bindkey -s ^f "tmux-sessionizer\n"

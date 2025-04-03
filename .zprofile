@@ -6,5 +6,4 @@ fi
 
 PATH=$PATH:~/bin
 
-bindkey -s ^f "tmux-sessionizer\n"
 EDITOR="nvim"
