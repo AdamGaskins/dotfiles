@@ -147,3 +147,5 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/co
 eval "$(starship init zsh)"
 
 bindkey -s ^f "tmux-sessionizer\n"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"

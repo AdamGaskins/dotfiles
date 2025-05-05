@@ -9,11 +9,9 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-
-# Run Sketchybar together with AeroSpace
-# sketchbar has a built-in detection of already running process,
-# so it won't be run twice on AeroSpace restart
-after-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = [
+  'exec-and-forget borders'
+]
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
@@ -29,7 +27,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 10
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -65,12 +63,12 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 4
-inner.vertical = 4
-outer.left = 0
-outer.bottom = 0
-outer.top = 0
-outer.right = 0
+inner.horizontal = 12
+inner.vertical = 12
+outer.left = 8
+outer.bottom = 8
+outer.top = 8
+outer.right = 8
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -97,12 +95,7 @@ outer.right = 0
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut
 # (like in i3)
-# alt-enter = '''exec-and-forget osascript -e '
-# tell application "Terminal"
-#     do script
-#     activate
-# end tell'
-# '''
+alt-enter = '''exec-and-forget open -n /Applications/kitty.app'''
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -199,6 +192,55 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
+
+alt-backslash = ['mode fun', 'exec-and-forget ~/.config/aerospace/switch-fun-workspace.sh']
+alt-shift-backslash = ['mode fun']
+
+[mode.fun.binding]
+alt-enter = '''exec-and-forget open -n /Applications/kitty.app'''
+
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
+
+alt-0 = 'workspace 0'
+alt-1 = 'workspace f1'
+alt-2 = 'workspace f2'
+alt-3 = 'workspace f3'
+alt-4 = 'workspace f4'
+alt-5 = 'workspace f5'
+alt-6 = 'workspace f6'
+alt-7 = 'workspace f7'
+alt-8 = 'workspace f8'
+alt-9 = 'workspace f9'
+
+alt-shift-0 = 'move-node-to-workspace 0'
+alt-shift-1 = 'move-node-to-workspace f1'
+alt-shift-2 = 'move-node-to-workspace f2'
+alt-shift-3 = 'move-node-to-workspace f3'
+alt-shift-4 = 'move-node-to-workspace f4'
+alt-shift-5 = 'move-node-to-workspace f5'
+alt-shift-6 = 'move-node-to-workspace f6'
+alt-shift-7 = 'move-node-to-workspace f7'
+alt-shift-8 = 'move-node-to-workspace f8'
+alt-shift-9 = 'move-node-to-workspace f9'
+
+alt-shift-semicolon = 'mode service'
+
+alt-backslash = ['mode main', 'exec-and-forget ~/.config/aerospace/switch-fun-workspace.sh']
+alt-shift-backslash = ['mode main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
