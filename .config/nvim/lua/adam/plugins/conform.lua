@@ -2,6 +2,7 @@ return {
 	"stevearc/conform.nvim",
 	opts = {},
 	config = function()
+		local util = require("conform.util")
 		require("conform").setup({
 			format_on_save = {},
 			formatters_by_ft = {
@@ -23,6 +24,13 @@ return {
 					"clang-format",
 				},
 				cpp = { "clang-format" },
+				php = {
+					"pint",
+					cwd = util.root_file({
+						"artisan",
+					}),
+					require_cwd = true,
+				},
 			},
 			formatters = {
 				["clang-format"] = {
