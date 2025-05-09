@@ -1,0 +1,44 @@
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+# https://felixkratz.github.io/SketchyBar/config/bar
+sketchybar --bar position=top height=26 y_offset=3 blur_radius=0 color=0x01000000 font_smoothing=on
+
+BG=0x99000000
+
+# https://felixkratz.github.io/SketchyBar/config/items
+default=(
+  icon.font="SF Symbols:Normal:17.0"
+  label.font="San Francisco Pro:Normal:14.0"
+  icon.color=0xffffffff
+  label.color=0xffffffff
+  label.padding_right=8
+  icon.padding_left=8
+  background.padding_left=8
+  background.padding_right=8
+  background.corner_radius=6
+  background.color="$BG"
+)
+sketchybar --default "${default[@]}"
+
+# Aerospace
+source "$ITEM_DIR/spaces.sh"
+ 
+# Left items
+sketchybar --add item front_app left \
+           --set front_app label.padding_left=8 icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+           --subscribe front_app front_app_switched
+
+# Right items
+# https://felixkratz.github.io/SketchyBar/config/events
+
+sketchybar --add item clock right \
+           --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
+\
+           --add item battery right \
+           --set battery icon.y_offset=1 \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change
+
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update

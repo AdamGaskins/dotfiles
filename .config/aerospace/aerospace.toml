@@ -10,12 +10,13 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  'exec-and-forget borders'
+    'exec-and-forget borders'
 ]
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+exec-on-workspace-change = [
+    '/bin/bash', '-c',
+    'sketchybar --trigger space_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 # Start AeroSpace at login
 start-at-login = false
@@ -67,7 +68,7 @@ inner.horizontal = 12
 inner.vertical = 12
 outer.left = 8
 outer.bottom = 8
-outer.top = 8
+outer.top = 4
 outer.right = 8
 
 # 'main' binding mode declaration
