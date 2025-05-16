@@ -35,3 +35,17 @@ vim.keymap.set("n", "<leader>s", ":ClangdSwitchSourceHeader<CR>")
 
 -- close buffer without messing up window
 vim.keymap.set("n", "<leader>bd", ":lua require('mini.bufremove').delete()<CR>", { noremap = true })
+
+-- snacks terminal
+vim.keymap.set("n", "<leader>t", ":lua Snacks.terminal.toggle()<CR>")
+
+-- file browser
+-- vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle<CR>")
+vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>Yazi toggle<CR>", { desc = "Open yazi at the current file" })
+vim.keymap.set({ "n", "v" }, "<leader>yf", "<cmd>Yazi<CR>", { desc = "Open yazi at the current file" })
+vim.keymap.set({ "n", "v" }, "<leader>yd", "<cmd>Yazi cwd<CR>", { desc = "Open yazi at the current file" })
+
+vim.keymap.set({ "n", "i" }, "<C-S-h>", "<C-w>h", { noremap = true })
+vim.keymap.set({ "n", "i" }, "<C-S-l>", "<C-w>l", { noremap = true })
+vim.keymap.set({ "n", "i" }, "<C-S-k>", "<C-w>k", { noremap = true })
+vim.keymap.set({ "n", "i" }, "<C-S-j>", "<C-w>j", { noremap = true })

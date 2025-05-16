@@ -1,9 +1,14 @@
-format = '''$cmd_duration$username$directory$git_branch
-$character'''
+#format = '''$cmd_duration$username$directory$git_branch
+#$character'''
+
+format = '\[$username$directory\]$character'
+add_newline = false
 
 [character]
-success_symbol = '[➜](bold green)'
+success_symbol = '\$'
+#success_symbol = '[➜](bold green)'
 error_symbol = '[✗](bold red)'
 
 [directory]
 truncate_to_repo=false
+format='[$path]($style)[$read_only]($read_only_style)'

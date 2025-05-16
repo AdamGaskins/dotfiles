@@ -93,6 +93,8 @@ else
     export EDITOR='nvim'
 fi
 
+export MANPAGER='nvim +Man!'
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
@@ -152,18 +154,20 @@ export PATH="/Users/adam/Library/Application Support/Herd/bin/":$PATH
 
 # Herd injected PHP 8.2 configuration.
 export HERD_PHP_82_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/82/"
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-if [ -x "$(command -v pyenv)" ]; then
-    eval "$(pyenv init - zsh)"
-fi
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# if [ -x "$(command -v pyenv)" ]; then
+#     eval "$(pyenv init - zsh)"
+# fi
 
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/84/"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 bindkey -s ^f "tmux-sessionizer\n"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH='/Users/adam/.duckdb/cli/latest':$PATH

@@ -1,0 +1,12 @@
+[[plugin.deps]]
+use = "wylie102/duckdb"
+rev = "02f902d"
+hash = "9893839d5134aaecf6fafbeff6cac18e"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "864a021"
+hash = "f3853bbdd1da2fad09d059ab5464abfd"
+
+[flavor]
+deps = []

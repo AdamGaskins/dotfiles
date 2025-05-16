@@ -20,3 +20,5 @@ vim.opt.scrolloff = 100
 vim.opt.updatetime = 100
 
 vim.opt.colorcolumn = "80"
+
+vim.opt.path:append("/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/**/include")

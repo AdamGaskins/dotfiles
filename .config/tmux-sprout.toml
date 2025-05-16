@@ -1,0 +1,25 @@
+[[projects]]
+name = "Dotfiles"
+folder = "/Users/adam/.dotfiles"
+tabs.dotfiles = "nvim"
+tabs.shell = ""
+
+[[projects]]
+name = "tmux-sprout"
+folder = "/Users/adam/lang/tmux-sprout"
+tabs.nvim = "nvim"
+tabs.shell = "meson compile -C buildDir"
+
+[[projects]]
+name = "Zentrest"
+folder = "Herd/zentrest"
+tabs.nvim = "nvim"
+tabs.build = "composer run dev"
+tabs.shell = "composer run dev"
+
+[[projects]]
+name = "First Glance"
+folder = "upward/fg-pwa"
+tabs.nvim = "nvim"
+tabs.build = "npm run dev"
+tabs.shell = ""

@@ -1,7 +1,7 @@
 # https://ghostty.org/docs/config
 
 cursor-style = bar
-background-opacity = 0.85
+background-opacity = 0.9
 background-blur = 20
 window-height = 30
 window-width = 100
@@ -14,5 +14,11 @@ font-size = 15
 #font-family = Perfect DOS VGA 437
 #font-size = 20
 
-theme = Monokai Remastered
+quit-after-last-window-closed=true
+gtk-single-instance = true
+
+theme = tokyonight_moon
 cursor-color = #ffffff
+macos-titlebar-style = hidden
+window-padding-x = 4
+window-padding-y = 4
