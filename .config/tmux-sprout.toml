@@ -23,3 +23,9 @@ folder = "upward/fg-pwa"
 tabs.nvim = "nvim"
 tabs.build = "npm run dev"
 tabs.shell = ""
+
+[[projects]]
+name = "lsd"
+folder = "lang/lsd"
+tabs.nvim = "nvim"
+tabs.shell = ""

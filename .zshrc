@@ -167,6 +167,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd cd)"
 
 bindkey -s ^f "tmux-sessionizer\n"
+export PATH="/Users/adam/.composer/vendor/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
