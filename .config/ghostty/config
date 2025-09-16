@@ -19,6 +19,7 @@ gtk-single-instance = true
 
 theme = tokyonight_moon
 cursor-color = #ffffff
-macos-titlebar-style = hidden
+#macos-titlebar-style = hidden
+window-decoration = false
 window-padding-x = 4
 window-padding-y = 4

@@ -10,12 +10,21 @@ folder = "/Users/adam/lang/tmux-sprout"
 tabs.nvim = "nvim"
 tabs.shell = "meson compile -C buildDir"
 
+### UPWARD SITES
 [[projects]]
 name = "Zentrest"
 folder = "Herd/zentrest"
-tabs.nvim = "nvim"
+#tabs.nvim = "nvim"
 tabs.build = "composer run dev"
-tabs.shell = "composer run dev"
+tabs.shell = ""
+
+### UPWARD APPS
+[[projects]]
+name = "Lightning Leads"
+folder = "upward/ll-pwa"
+tabs.nvim = "nvim"
+tabs.build = "npm run dev"
+tabs.shell = ""
 
 [[projects]]
 name = "First Glance"
@@ -24,6 +33,7 @@ tabs.nvim = "nvim"
 tabs.build = "npm run dev"
 tabs.shell = ""
 
+### OPEN SOURCE
 [[projects]]
 name = "lsd"
 folder = "lang/lsd"
