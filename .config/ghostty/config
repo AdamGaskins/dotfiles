@@ -17,7 +17,7 @@ font-size = 15
 quit-after-last-window-closed=true
 gtk-single-instance = true
 
-theme = tokyonight_moon
+theme = TokyoNight Moon
 cursor-color = #ffffff
 #macos-titlebar-style = hidden
 window-decoration = false
