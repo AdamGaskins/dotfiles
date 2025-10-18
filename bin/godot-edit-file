@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+nvim --server /tmp/godot.pipe --remote-send "<esc>:n $1<CR>:call cursor($2,$3)<CR>"
+osascript -e 'tell application "Ghostty" to activate'
+

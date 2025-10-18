@@ -1,0 +1,86 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "a4ab037",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'v1.7.0'"
+    },
+    "conform.nvim": {
+      "rev": "fbcb4fa",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "live-command.nvim": {
+      "rev": "d23d94a",
+      "src": "https://github.com/smjonas/live-command.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "3946f01",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "mason.nvim": {
+      "rev": "ad7146a",
+      "src": "https://github.com/mason-org/mason.nvim.git"
+    },
+    "mini.ai": {
+      "rev": "11c5718",
+      "src": "https://github.com/nvim-mini/mini.ai"
+    },
+    "mini.pairs": {
+      "rev": "b9aada8",
+      "src": "https://github.com/nvim-mini/mini.pairs"
+    },
+    "mini.sessions": {
+      "rev": "4ed3a61",
+      "src": "https://github.com/nvim-mini/mini.sessions"
+    },
+    "neo-tree.nvim": {
+      "rev": "c4c168e",
+      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",
+      "version": "3.0.0 - 4.0.0"
+    },
+    "neotest": {
+      "rev": "2089f83",
+      "src": "https://github.com/nvim-neotest/neotest"
+    },
+    "neotest-pest": {
+      "rev": "1429445",
+      "src": "https://github.com/V13Axel/neotest-pest"
+    },
+    "nui.nvim": {
+      "rev": "de74099",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "ac98db2",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-nio": {
+      "rev": "21f5324",
+      "src": "https://github.com/nvim-neotest/nvim-nio"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-web-devicons": {
+      "rev": "b8221e4",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "b4da76b",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "tokyonight.nvim": {
+      "rev": "d14614c",
+      "src": "https://github.com/folke/tokyonight.nvim"
+    },
+    "vim-surround": {
+      "rev": "3d188ed",
+      "src": "https://github.com/tpope/vim-surround"
+    }
+  }
+}
