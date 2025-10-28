@@ -127,6 +127,11 @@ export NVM_DIR="/Users/adam/Library/Application Support/Herd/config/nvm"
 if [[ "$(uname)" == "Linux" ]]; then
     export NVM_DIR="$HOME/.nvm"
 fi
+
+if [ ! -d "$DIRECTORY" ]; then
+    export NVM_DIR="$HOME/.nvm"
+fi
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

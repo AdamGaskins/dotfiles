@@ -8,7 +8,8 @@ window-width = 100
 #font-family = Monaspace Argon Frozen
 #font-family = Iosevka Term Extended
 
-font-family = Cascadia Code
+#font-family = Cascadia Code
+font-family = CaskaydiaCove Nerd Font
 font-size = 15
 
 #font-family = Perfect DOS VGA 437
@@ -20,6 +21,6 @@ gtk-single-instance = true
 theme = TokyoNight Moon
 cursor-color = #ffffff
 #macos-titlebar-style = hidden
-window-decoration = false
+#window-decoration = false
 window-padding-x = 4
 window-padding-y = 4
