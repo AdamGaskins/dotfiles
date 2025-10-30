@@ -84,3 +84,6 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover)
 vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
 vim.keymap.set({ "n", "x" }, "<leader>lf", require("conform").format)
+
+-- render markdown
+vim.keymap.set("n", "<leader>m", require('render-markdown').toggle)

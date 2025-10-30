@@ -13,6 +13,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/smjonas/live-command.nvim" },
+    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 
 	{ src = "https://github.com/nvim-neotest/neotest" },
 	{ src = "https://github.com/nvim-neotest/nvim-nio" }, -- neotest dependency
@@ -207,3 +208,5 @@ require("conform").setup({
 -- other
 --
 require("mini.sessions").setup()
+require('render-markdown').setup({})
+
