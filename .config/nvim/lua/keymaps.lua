@@ -81,9 +81,15 @@ vim.keymap.set("n", "gi", telescope.lsp_implementations, {})
 vim.keymap.set("n", "gr", telescope.lsp_references)
 vim.keymap.set("n", "gs", vim.lsp.buf.signature_help) -- same as hover?
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
+-- vim.keymap.set('n', '<leader>la', apply(vim.lsp.buf.code_action, {apply=true}))
+vim.keymap.set('n', '<leader>la', require("fastaction").code_action)
 vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
 vim.keymap.set({ "n", "x" }, "<leader>lf", require("conform").format)
 
 -- render markdown
 vim.keymap.set("n", "<leader>m", require('render-markdown').toggle)
+
+-- kulala
+vim.keymap.set({"n", "v"}, "<leader>Rs", function() require("kulala").run() end, { desc = "Kulala Run Request" })
+

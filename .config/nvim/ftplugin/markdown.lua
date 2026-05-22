@@ -1,0 +1,6 @@
+--vim.opt.wrap = true
+--vim.opt.linebreak = true
+--vim.opt.textwidth = 80
+--vim.opt.wrapmargin = 80
+--vim.opt.columns = 80
+--#vim.opt.breakindent = true

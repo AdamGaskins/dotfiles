@@ -1,7 +1,7 @@
 # https://ghostty.org/docs/config
 
 cursor-style = bar
-background-opacity = 0.9
+#background-opacity = 0.9
 background-blur = 20
 window-height = 30
 window-width = 100
@@ -18,7 +18,8 @@ font-size = 15
 quit-after-last-window-closed=true
 gtk-single-instance = true
 
-theme = TokyoNight Moon
+#theme = TokyoNight Moon
+theme = TokyoNight
 cursor-color = #ffffff
 #macos-titlebar-style = hidden
 #window-decoration = false

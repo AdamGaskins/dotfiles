@@ -22,6 +22,7 @@ brew install lsd
 brew install stow
 brew install jj
 brew install zoxide
+brew install --cask sf-symbols
 ```
 
 Install NVM:
