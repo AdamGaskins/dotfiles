@@ -3,6 +3,7 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim",              version = vim.version.range("3") },
+	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
 	{ src = "https://github.com/mason-org/mason.nvim.git" },
 	{ src = "https://github.com/saghen/blink.cmp",                         version = "v1.7.0" },
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
@@ -42,27 +43,35 @@ vim.cmd.colorscheme("tokyonight-night")
 --
 -- neotree
 --
-local function on_move(data)
-	require("snacks").rename.on_rename_file(data.source, data.destination)
-	print("hi")
-end
 
-require("neo-tree").setup({
-	auto_clean_after_session_restore = true,
-	window = {
-		width = 40,
-	},
-	filesystem = {
-		filtered_items = {
-			hide_dotfiles = false,
-			hide_gitignored = false,
-		},
-	},
-	event_handlers = {
-		{ event = "file_moved",   handler = on_move },
-		{ event = "file_renamed", handler = on_move },
-	},
-})
+-- local function on_move(data)
+-- 	require("snacks").rename.on_rename_file(data.source, data.destination)
+-- 	print("hi")
+-- end
+--
+-- require("neo-tree").setup({
+-- 	auto_clean_after_session_restore = true,
+-- 	window = {
+-- 		width = 40,
+-- 	},
+-- 	filesystem = {
+-- 		filtered_items = {
+-- 			hide_dotfiles = false,
+-- 			hide_gitignored = false,
+-- 		},
+-- 	},
+-- 	event_handlers = {
+-- 		{ event = "file_moved",   handler = on_move },
+-- 		{ event = "file_renamed", handler = on_move },
+-- 	},
+-- })
+
+--
+-- nvim-tree
+--
+
+require("nvim-tree").setup()
+vim.keymap.set({ "n" }, "<leader>e", ":NvimTreeToggle<Cr>", { noremap = true })
 
 --
 -- blink
