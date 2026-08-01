@@ -2,15 +2,7 @@
 # inspired by
 # https://github.com/ThePrimeagen/tmux-sessionizer
 
-if [[ $# -eq 1 ]]; then
-    selected=$1
-else
-    selected=$( (find ~/lang ~/Herd ~/upward -mindepth 1 -maxdepth 1 -type d; echo ~/.dotfiles) | fzf --tmux)
-fi
-
-if [[ -z $selected ]]; then
-    exit 0
-fi
-
+paths=$(find ~/lang ~/lang/games -mindepth 1 -maxdepth 1 -type d; echo ~/.dotfiles)
+selected=$(echo "$paths" | fzf --popup 80% --style full --preview 'lsd --tree --color always {}')
 tmux-sprout "$selected"
 

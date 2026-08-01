@@ -16,7 +16,7 @@ font-size = 15
 #font-size = 20
 
 quit-after-last-window-closed=true
-gtk-single-instance = true
+gtk-single-instance = false
 
 #theme = TokyoNight Moon
 theme = TokyoNight

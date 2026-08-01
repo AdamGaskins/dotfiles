@@ -68,28 +68,41 @@ vim.keymap.set({ "n", "i" }, "<C-j>", "<C-w>j", { noremap = true })
 -- telescope/lsp
 --
 local telescope = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Find Files" })
-vim.keymap.set("n", "<leader>fg", telescope.live_grep, { desc = "Find Grep" })
-vim.keymap.set("n", "<leader>fb", apply(telescope.buffers, { sort_mru = true }), { desc = "Find Buffers" })
-vim.keymap.set("n", "<leader>fh", telescope.help_tags, { desc = "Find Help Tags" })
-vim.keymap.set("n", "<leader>fs", telescope.lsp_document_symbols, { desc = "Find Symbols" })
-vim.keymap.set("n", "<leader>fq", telescope.quickfix, {})
-vim.keymap.set("n", "<leader>fk", telescope.keymaps, {})
-vim.keymap.set("n", "gd", telescope.lsp_definitions, {})
-vim.keymap.set("n", "gt", telescope.lsp_type_definitions, {})
-vim.keymap.set("n", "gi", telescope.lsp_implementations, {})
-vim.keymap.set("n", "gr", telescope.lsp_references)
+vim.keymap.set("n", "<leader>ff", Snacks.picker.files, { desc = "Find Files" })
+vim.keymap.set("n", "<leader>fg", Snacks.picker.grep, { desc = "Find Grep" })
+-- vim.keymap.set("n", "<leader>fb", apply(telescope.buffers, { sort_mru = true }), { desc = "Find Buffers" })
+vim.keymap.set("n", "<leader>fb", Snacks.picker.buffers, { desc = "Find Buffers" })
+vim.keymap.set("n", "<leader>fh", Snacks.picker.help, { desc = "Find Help Tags" })
+vim.keymap.set("n", "<leader>fs", Snacks.picker.lsp_symbols, { desc = "Find Symbols" })
+-- vim.keymap.set("n", "<leader>fq", telescope.quickfix, {})
+vim.keymap.set("n", "<leader>fk", Snacks.picker.keymaps, {})
+vim.keymap.set("n", "gd", Snacks.picker.lsp_definitions, {})
+vim.keymap.set("n", "gt", Snacks.picker.lsp_type_definitions, {})
+vim.keymap.set("n", "gi", Snacks.picker.lsp_implementations, {})
+vim.keymap.set("n", "gr", Snacks.picker.lsp_references)
 vim.keymap.set("n", "gs", vim.lsp.buf.signature_help) -- same as hover?
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 -- vim.keymap.set('n', '<leader>la', apply(vim.lsp.buf.code_action, {apply=true}))
 vim.keymap.set('n', '<leader>la', require("fastaction").code_action)
 vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float)
+vim.keymap.set('n', ']g', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic' })
+vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic' })
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
 vim.keymap.set({ "n", "x" }, "<leader>lf", require("conform").format)
+
+--
+-- flutter
+--
+vim.keymap.set('n', "<leader>flr", ":FlutterRun<Cr>")
+vim.keymap.set('n', "<leader>flq", ":FlutterQuit<Cr>")
+vim.keymap.set('n', "<leader>flR", ":FlutterReload<Cr>")
+vim.keymap.set('n', "<leader>flo", ":FlutterOutlineToggle<Cr>")
+vim.keymap.set('n', "<leader>fll", ":FlutterLogToggle<Cr>")
+vim.keymap.set('n', "<leader>fld", ":FlutterDevices<Cr>")
+vim.keymap.set('n', "<leader>fle", ":FlutterEmulators<Cr>")
 
 -- render markdown
 vim.keymap.set("n", "<leader>m", require('render-markdown').toggle)
 
 -- kulala
-vim.keymap.set({"n", "v"}, "<leader>Rs", function() require("kulala").run() end, { desc = "Kulala Run Request" })
-
+vim.keymap.set({ "n", "v" }, "<leader>Rs", function() require("kulala").run() end, { desc = "Kulala Run Request" })

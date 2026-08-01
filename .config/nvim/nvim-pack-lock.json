@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "autoreload.nvim": {
+      "rev": "6b58960",
+      "src": "https://github.com/ccntrq/autoreload.nvim"
+    },
     "blink.cmp": {
       "rev": "a4ab037",
       "src": "https://github.com/saghen/blink.cmp",
@@ -12,6 +16,14 @@
     "fastaction.nvim": {
       "rev": "b147d91",
       "src": "https://github.com/chaitanyabsprip/fastaction.nvim"
+    },
+    "flutter-tools.nvim": {
+      "rev": "7d1acfd",
+      "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
+    },
+    "gitsigns.nvim": {
+      "rev": "25050e4",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "kulala.nvim": {
       "rev": "6656c9d",
@@ -54,7 +66,7 @@
       "src": "https://github.com/nvim-mini/mini.surround"
     },
     "neo-tree.nvim": {
-      "rev": "c4c168e",
+      "rev": "83e7a29",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",
       "version": "3.0.0 - 4.0.0"
     },
@@ -93,6 +105,10 @@
     "render-markdown.nvim": {
       "rev": "10126ef",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "882c996",
+      "src": "https://github.com/folke/snacks.nvim"
     },
     "telescope.nvim": {
       "rev": "b4da76b",

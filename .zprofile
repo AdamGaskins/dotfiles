@@ -9,3 +9,4 @@ PATH=$PATH:~/bin
 export XDG_CONFIG_HOME="$HOME/.config"
 
 EDITOR="nvim"
+source ~/emsdk/emsdk_env.sh 2>/dev/null

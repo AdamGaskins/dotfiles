@@ -6,12 +6,14 @@
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 
+config-version = 2
+
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
     # 'exec-and-forget borders',
-    'exec-and-forget sketchybar'
+    # 'exec-and-forget sketchybar'
 ]
 
 # Notify Sketchybar about workspace change
@@ -60,6 +62,10 @@ automatically-unhide-macos-hidden-apps = false
     if.window-title-regex-substring = '^.*(?!Godot Engine)$'
     run = 'layout floating'
 
+[[on-window-detected]]
+    if = 'test %{app-name} = raylua'
+    run = 'layout tiling'
+
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
@@ -74,13 +80,13 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-# inner.horizontal = 12
-# inner.vertical = 12
+inner.horizontal = 4
+inner.vertical = 4
 # outer.left = 8
 # outer.bottom = 8
 # outer.top = 4
 # outer.right = 8
-outer.top = 5
+# outer.top = 5
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -130,7 +136,7 @@ alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-0 = 'workspace 0'
+# alt-0 = 'workspace 0'
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
@@ -142,7 +148,7 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-0 = 'move-node-to-workspace 0'
+# alt-shift-0 = 'move-node-to-workspace 0'
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'

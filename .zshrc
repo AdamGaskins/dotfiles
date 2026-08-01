@@ -72,15 +72,24 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    dnf
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+
+# Speed up zsh startup
+autoload -Uz compinit 
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+	compinit;
+else
+	compinit -C;
+fi;
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+FNM_LOGLEVEL=quiet
+eval "$(fnm env --log-level=quiet --use-on-cd --shell=zsh)"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -111,10 +120,21 @@ export MANPAGER='nvim +Man!'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+tmux_sessionizer() {
+    BUFFER="tmux-sessionizer"
+    zle accept-line
+}
+zle -N tmux_sessionizer
+bindkey '^f' tmux_sessionizer
+
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 phpstorm () { open -na "PhpStorm.app" --args "$@" ;}
 art () { php artisan $* ; }
+jbs() { jj b s "${1:-main}" -r @- }
 
+alias jgp='jj git push'
+alias aseprite='/Applications/Aseprite.app/Contents/MacOS/aseprite'
+alias love="/Applications/love.app/Contents/MacOS/love"
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 alias ls='lsd'
 alias l='ls -l'
@@ -122,18 +142,6 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# Herd injected NVM configuration
-export NVM_DIR="/Users/adam/Library/Application Support/Herd/config/nvm"
-if [[ "$(uname)" == "Linux" ]]; then
-    export NVM_DIR="$HOME/.nvm"
-fi
-
-if [ ! -d "$DIRECTORY" ]; then
-    export NVM_DIR="$HOME/.nvm"
-fi
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
 
@@ -169,16 +177,18 @@ export HERD_PHP_82_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/co
 export HERD_PHP_84_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/84/"
 
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh --cmd cd)"
 
-bindkey -s ^f "tmux-sessionizer\n"
 export PATH="/Users/adam/.composer/vendor/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
 export PATH='/Users/adam/.duckdb/cli/latest':$PATH
+export PATH='/Users/adam/odin':$PATH
 
 export GOPATH="${HOME}/go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/adam/.lmstudio/bin"
+# End of LM Studio CLI section

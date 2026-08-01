@@ -1,0 +1,10 @@
+theme="tokyonight_moon"
+
+[editor]
+line-number="relative"
+
+[keys.normal]
+C-f=":! tmux-sessionizer"
+
+[editor.cursor-shape]
+insert="bar"
