@@ -1,10 +1,10 @@
 {
 	"optOut": false,
-	"lastUpdateCheck": 1779434490404,
+	"lastUpdateCheck": 1790552741612,
 	"update": {
-		"latest": "26.0.2",
+		"latest": "27.10.0",
 		"current": "26.0.0",
-		"type": "patch",
+		"type": "major",
 		"name": "netlify-cli"
 	}
 }

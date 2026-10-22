@@ -2,8 +2,9 @@ vim.pack.add({
 	{ src = "https://github.com/folke/tokyonight.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim",              version = vim.version.range("3") },
+	-- { src = "https://github.com/nvim-neo-tree/neo-tree.nvim",              version = vim.version.range("3") },
 	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
+	{ src = "https://github.com/antosha417/nvim-lsp-file-operations" },
 	{ src = "https://github.com/mason-org/mason.nvim.git" },
 	{ src = "https://github.com/saghen/blink.cmp",                         version = "v1.7.0" },
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
@@ -30,7 +31,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-neotest/nvim-nio" }, -- neotest dependency
 	{ src = "https://github.com/V13Axel/neotest-pest" },
 
-	{ src = "https://github.com/nvim-lua/plenary.nvim" },    -- depended on by multiple
+	{ src = "https://github.com/nvim-lua/plenary.nvim" }, -- depended on by multiple
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" }, -- depended on by multiple
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
 })
@@ -70,8 +71,20 @@ vim.cmd.colorscheme("tokyonight-night")
 -- nvim-tree
 --
 
-require("nvim-tree").setup()
-vim.keymap.set({ "n" }, "<leader>e", ":NvimTreeToggle<Cr>", { noremap = true })
+require("nvim-tree").setup({
+	view = {
+		width = 40,
+	},
+	renderer = {
+		icons = {
+			git_placement = "right_align"
+		}
+	},
+	update_focused_file = {
+		enable = true
+	}
+})
+require("lsp-file-operations").setup()
 
 --
 -- blink
@@ -124,19 +137,32 @@ require("lualine").setup({
 --
 -- highlighting
 --
-require("nvim-treesitter.configs").setup({
-	ensure_installed = { "javascript", "typescript", "python", "c", "lua", "vim", "vimdoc", "query", "htmldjango" },
-	sync_install = false,
-	auto_install = true,
-	ignore_install = {},
-	indent = {
-		enable = true,
+require('nvim-treesitter').install {
+	'rust', 'javascript', 'zig', 'typescript', 'vue', 'lua', 'vim', 'vimdoc',
+	'c', 'cpp', 'python', 'go', 'rust', 'html', 'css', 'markdown', 'odin'
+}
+vim.treesitter.language.register("css", "tailwindcss")
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = {
+		'rs', 'js', 'zig', 'ts', 'vue', 'lua', 'vim', 'vimdoc',
+		'c', 'cpp', 'python', 'go', 'rust', 'html', 'css', 'md', 'odin',
+		'tailwindcss'
 	},
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
+	callback = function() vim.treesitter.start() end,
 })
+-- require("nvim-treesitter.configs").setup({
+-- 	ensure_installed = { "javascript", "typescript", "python", "c", "lua", "vim", "vimdoc", "query", "htmldjango" },
+-- 	sync_install = false,
+-- 	auto_install = true,
+-- 	ignore_install = {},
+-- 	indent = {
+-- 		enable = true,
+-- 	},
+-- 	highlight = {
+-- 		enable = true,
+-- 		additional_vim_regex_highlighting = false,
+-- 	},
+-- })
 
 --
 -- lsp
@@ -145,7 +171,7 @@ require("mason").setup()
 vim.lsp.enable({ "lua_ls", "gdscript", "tailwindcss", "intelephense", "gopls", "rust_analyzer", "zls" })
 -- vue/typescript
 local vue_language_server_path = vim.fn.expand '$MASON/packages' ..
-	'/vue-language-server' .. '/node_modules/@vue/language-server'
+    '/vue-language-server' .. '/node_modules/@vue/language-server'
 
 local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
 local vue_plugin = {
@@ -176,7 +202,15 @@ local ts_ls_config = {
 	filetypes = tsserver_filetypes,
 }
 
-local vue_ls_config = {}
+local vue_ls_config = {
+	settings = {
+		css = {
+			lint = {
+				unknownAtRules = "ignore",
+			},
+		},
+	},
+}
 
 vim.lsp.config('vtsls', vtsls_config)
 vim.lsp.config('vue_ls', vue_ls_config)
@@ -192,6 +226,13 @@ vim.lsp.config('dartls', {
 
 })
 vim.lsp.enable('dartls')
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.css" },
+	callback = function()
+		vim.bo.filetype = "tailwindcss"
+	end,
+})
+
 
 --
 -- godot

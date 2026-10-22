@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "disabled_providers": [],
+  "provider": {
+    "lmstudio1": {
+      "name": "LMStudio",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      },
+      "models": {
+        "qwen2.5-coder-7b-instruct-mlx": {
+          "name": "Qwen2.5 Coder 7b (4bit)"
+        },
+        "qwen/qwen3-8b": {
+          "name": "Qwen3 8b"
+        }
+      }
+    }
+  }
+}

@@ -63,6 +63,10 @@ automatically-unhide-macos-hidden-apps = false
     run = 'layout floating'
 
 [[on-window-detected]]
+    if.window-title-regex-substring = 'Manga Sensei'
+    run = 'layout floating'
+
+[[on-window-detected]]
     if = 'test %{app-name} = raylua'
     run = 'layout tiling'
 

@@ -9,6 +9,7 @@
   "trustedformulae": [
     "https://codeberg.org/brettchalupa/usagi/usagi",
     "https://github.com/adamgaskins/luray-engine/luray-engine",
-    "https://github.com/adamgaskins/tmux-sprout/tmux-sprout"
+    "https://github.com/adamgaskins/tmux-sprout/tmux-sprout",
+    "ikawaha/kagome/kagome"
   ]
 }

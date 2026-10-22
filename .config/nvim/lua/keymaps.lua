@@ -48,7 +48,8 @@ end)
 vim.keymap.set("n", "<leader>bd", ":lua require('mini.bufremove').delete()<CR>", { noremap = true })
 
 -- file browser
-vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle<CR>")
+-- vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<Cr>", { noremap = true })
 
 -- restart
 vim.keymap.set("n", "<leader>r", function()

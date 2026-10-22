@@ -1,0 +1,17 @@
+2026-09-11T17:16:18.160720Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=30147
+2026-09-11T17:16:18.160768Z  INFO herdr::client: connecting to server path=/Users/adam/.config/herdr/herdr-client.sock
+2026-09-11T17:16:18.399571Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-09-11T17:17:20.182283Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=31085
+2026-09-11T17:17:20.183212Z  INFO herdr::client: connecting to server path=/Users/adam/.config/herdr/herdr-client.sock
+2026-09-11T17:17:20.338960Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-09-12T03:06:44.526539Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=31085
+2026-09-12T09:28:32.493933Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=38027
+2026-09-12T09:28:32.494132Z  INFO herdr::client: connecting to server path=/Users/adam/.config/herdr/herdr-client.sock
+2026-09-12T09:28:32.503894Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-09-12T09:30:15.339486Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=38027
+2026-09-12T09:30:17.849837Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=39436
+2026-09-12T09:30:17.849893Z  INFO herdr::client: connecting to server path=/Users/adam/.config/herdr/herdr-client.sock
+2026-09-12T09:30:17.911734Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.0
+2026-09-14T09:13:38.683473Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-09-14T09:13:38.685159Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=39436
+2026-09-15T11:23:52.452683Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=30147

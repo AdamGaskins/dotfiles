@@ -1,0 +1,11 @@
+onboarding = false
+
+[ui.toast]
+delivery = "terminal"
+
+[experimental]
+kitty_graphics = true
+
+[theme]
+name = "tokyo-night"
+auto_switch = false

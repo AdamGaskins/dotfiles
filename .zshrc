@@ -192,3 +192,6 @@ export PATH=$PATH:$GOROOT/bin
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/adam/.lmstudio/bin"
 # End of LM Studio CLI section
+
+# Created by `pipx` on 2026-08-20 04:29:19
+export PATH="$PATH:/Users/adam/.local/bin"

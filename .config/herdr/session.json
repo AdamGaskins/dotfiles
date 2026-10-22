@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "wD",
+      "custom_name": null,
+      "identity_cwd": "/Users/adam",
+      "public_pane_numbers": {
+        "18": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 18
+          },
+          "panes": {
+            "18": {
+              "cwd": "/Users/adam"
+            }
+          },
+          "zoomed": false,
+          "focused": 18,
+          "root_pane": 18
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 0,
+  "selected": 0,
+  "sidebar_width": null,
+  "sidebar_section_split": null,
+  "collapsed_space_keys": []
+}

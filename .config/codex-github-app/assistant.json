@@ -1,0 +1,7 @@
+{
+  "appId": 5324946,
+  "clientId": "Iv23li2elK1CHZ2fCE1C",
+  "slug": "assistant-adamgaskins",
+  "privateKeyPath": "/Users/adam/.config/codex-github-app/assistant.pem",
+  "allowedRepos": ["AdamGaskins/language-time"]
+}
