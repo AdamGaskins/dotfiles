@@ -143,47 +143,23 @@ alias lt='ls --tree'
 
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
 
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP binary.
-export PATH="/Users/adam/Library/Application Support/Herd/bin":$PATH
-
-
-# Herd injected PHP 8.0 configuration.
-export HERD_PHP_80_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/80/"
-
-
-# Herd injected PHP 8.1 configuration.
-export HERD_PHP_81_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/81/"
-
-
-# Herd injected PHP binary.
-export PATH="/Users/adam/Library/Application Support/Herd/bin/":$PATH
-
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/82/"
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # if [ -x "$(command -v pyenv)" ]; then
 #     eval "$(pyenv init - zsh)"
 # fi
 
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/adam/Library/Application Support/Herd/config/php/84/"
-
 eval "$(starship init zsh)"
 
 export PATH="/Users/adam/.composer/vendor/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
-export PATH='/Users/adam/.duckdb/cli/latest':$PATH
 export PATH='/Users/adam/odin':$PATH
 
 export GOPATH="${HOME}/go"
-export GOROOT="$(brew --prefix golang)/libexec"
+# /opt/homebrew/opt/golang is Homebrew's stable opt-prefix symlink (repointed on `brew upgrade go`),
+# so this avoids a ~50ms `brew --prefix golang` subprocess spawn on every shell startup
+export GOROOT="/opt/homebrew/opt/golang/libexec"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
