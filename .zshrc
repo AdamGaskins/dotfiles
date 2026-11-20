@@ -76,15 +76,13 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-# Speed up zsh startup
-autoload -Uz compinit 
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-	compinit;
-else
-	compinit -C;
-fi;
+# Skip oh-my-zsh's compaudit/-i insecure-directory scan on every startup
+ZSH_DISABLE_COMPFIX=true
 
-source $ZSH/oh-my-zsh.sh
+# Defer the full oh-my-zsh load (incl. compinit, plugins, theme) until the
+# shell is idle, so the prompt appears instantly instead of blocking on it.
+source "${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-defer/zsh-defer.plugin.zsh"
+zsh-defer source $ZSH/oh-my-zsh.sh
 
 # User configuration
 

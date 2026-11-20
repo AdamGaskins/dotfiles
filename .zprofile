@@ -9,7 +9,8 @@ PATH=$PATH:~/bin
 export XDG_CONFIG_HOME="$HOME/.config"
 
 EDITOR="nvim"
-source ~/emsdk/emsdk_env.sh 2>/dev/null
+# Costs ~200ms/shell (shells out to python via `emsdk construct_env`) - rarely used, source manually when needed
+# source ~/emsdk/emsdk_env.sh 2>/dev/null
 
 # Created by `pipx` on 2026-08-20 04:29:19
 export PATH="$PATH:/Users/adam/.local/bin"
